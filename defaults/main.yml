@@ -1,0 +1,5 @@
+---
+openldap_app_name:          openldap                      # helm chart release name
+openldap_namespace:         openldap                      # k8s namespace
+adminPassword:              secret                        # admin user password
+configPassword:             secret                        # config password

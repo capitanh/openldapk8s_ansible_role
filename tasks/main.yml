@@ -1,0 +1,23 @@
+---
+- name: Install pip packages
+  pip:
+    name:
+      - kubernetes
+
+- name: Transfer openldap config values file
+  template:
+    src: values.yml
+    dest: "/tmp/openldap_values.yml"
+    mode: 0644
+
+- name: Install openldap helm chart
+  kubernetes.core.helm:
+    release_name: "{{openldap_app_name}}"
+    chart_ref: openldap-stack-ha
+    chart_repo_url: https://jp-gouin.github.io/helm-openldap
+    release_namespace: "{{openldap_namespace}}"
+    create_namespace: true
+    wait: yes
+    values_files:
+      - /tmp/openldap_values.yml
+  become_user: "{{admin_user}}"

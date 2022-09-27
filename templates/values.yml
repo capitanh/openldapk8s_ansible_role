@@ -1,0 +1,64 @@
+# Custom config values, see https://github.com/jp-gouin/helm-openldap/blob/master/values.yaml for reference
+global:
+  ldapDomain: "{{ldapDomain}}"
+  adminPassword: secret
+  configPassword: secret
+replicaCount: {{openldap_replicas}}
+
+service:
+  type: NodePort
+  ldapPortNodePort: {{ldap_nodeport}}
+
+# Default configuration for openldap as environment variables. These get injected directly in the container.
+# Use the env variables from https://github.com/osixia/docker-openldap#beginner-guide
+env:
+ #LDAP_LOG_LEVEL: "256"
+ LDAP_ORGANISATION: "{{ldap_organisation}}"
+ #LDAP_READONLY_USER: "false"
+ #LDAP_READONLY_USER_USERNAME: "readonly"
+ #LDAP_READONLY_USER_PASSWORD: "readonly"
+ #LDAP_RFC2307BIS_SCHEMA: "false"
+ #LDAP_BACKEND: "mdb"
+ #LDAP_TLS: "true"
+ #LDAP_TLS_CRT_FILENAME: "tls.crt"
+ #LDAP_TLS_KEY_FILENAME: "tls.key"
+ #LDAP_TLS_DH_PARAM_FILENAME: "dhparam.pem"
+ #LDAP_TLS_CA_CRT_FILENAME: "ca.crt"
+ #LDAP_TLS_ENFORCE: "false"
+ #LDAP_TLS_REQCERT: "never"
+ #KEEP_EXISTING_CONFIG: "false"
+ #LDAP_REMOVE_CONFIG_AFTER_SETUP: "true"
+ #LDAP_SSL_HELPER_PREFIX: "ldap"
+ #LDAP_TLS_VERIFY_CLIENT: "never"
+ #LDAP_TLS_PROTOCOL_MIN: "3.0"
+ #LDAP_TLS_CIPHER_SUITE: "NORMAL"
+
+replication:
+  enabled: false
+
+## Persist data to a persistent volume
+persistence:
+  enabled: true
+  ## database data Persistent Volume Storage Class
+  ## If defined, storageClassName: <storageClass>
+  ## If set to "-", storageClassName: "", which disables dynamic provisioning
+  ## If undefined (the default) or set to null, no storageClassName spec is
+  ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+  ##   GKE, AWS & OpenStack)
+  ##
+  # storageClass: "standard-singlewriter"
+  # existingClaim: openldap-pvc
+  accessModes:
+    - ReadWriteOnce
+  size: 1Gi
+
+serviceAccount:
+  ## @param serviceAccount.create Specifies whether a ServiceAccount should be created
+  create: true
+  ## @param serviceAccount.name The name of the ServiceAccount to use.
+  ## If not set and create is true, a name is generated using the common.names.fullname template
+  ##
+  name: ""
+
+phpldapadmin:
+  enabled: false
