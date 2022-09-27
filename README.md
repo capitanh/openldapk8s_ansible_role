@@ -16,7 +16,7 @@ openldap_namespace:         openldap                      # k8s namespace
 ldap_organisation:          My org                        # ldap organisation field
 ldapDomain:                 example.com                   # ldap root domain
 adminPassword:              secret                        # admin user password
-configPassword:             secret    # config password (defined in openldap/group_vars/all/vault.yml)
+configPassword:             secret                        # config password (defined in openldap/group_vars/all/vault.yml)
 ldap_nodeport:              30001                         # k8s Nodeport to access ldap server from outside cluster
 openldap_replicas:          1                             # number of replicas
 ```
