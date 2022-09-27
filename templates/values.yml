@@ -11,9 +11,9 @@ service:
 
 # Default configuration for openldap as environment variables. These get injected directly in the container.
 # Use the env variables from https://github.com/osixia/docker-openldap#beginner-guide
-env:
+#env:
  #LDAP_LOG_LEVEL: "256"
- LDAP_ORGANISATION: "{{ldap_organisation}}"
+ #LDAP_ORGANISATION: "Example Inc."
  #LDAP_READONLY_USER: "false"
  #LDAP_READONLY_USER_USERNAME: "readonly"
  #LDAP_READONLY_USER_PASSWORD: "readonly"
