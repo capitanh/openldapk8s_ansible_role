@@ -1,6 +1,5 @@
 # Custom config values, see https://github.com/jp-gouin/helm-openldap/blob/master/values.yaml for reference
 global:
-  #ldapDomain: "{{ldapDomain}}"
   adminPassword: "{{admin_password}}"
   configPassword: "{{config_password}}"
 replicaCount: {{openldap_replicas}}
