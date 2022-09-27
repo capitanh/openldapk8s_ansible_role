@@ -1,4 +1,5 @@
 ---
+ldap_domain:                example.com
 openldap_app_name:          openldap                      # helm chart release name
 openldap_namespace:         openldap                      # k8s namespace
 admin_password:             secret                        # admin user password
