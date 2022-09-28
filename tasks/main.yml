@@ -45,5 +45,5 @@
 
 - name: Export variables
   set_fact:
-    OPENLDAP_SERVICE_INFO: "{{L_OPENDLDAP_SERVICE_INFO}}"
+    OPENLDAP_SERVICE_INFO: "{{L_OPENLDAP_SERVICE_INFO}}"
 
