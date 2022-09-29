@@ -45,4 +45,4 @@
 
 - name: Export variables
   set_fact:
-    OPENLDAP_SERVICE_IP: "{{L_OPENLDAP_SERVICE_INFO.resources[0].spec.clusterIP}}"
+    OPENLDAP_SERVICE_INFO: "{{L_OPENLDAP_SERVICE_INFO.resources[0].spec.clusterIP}}"
