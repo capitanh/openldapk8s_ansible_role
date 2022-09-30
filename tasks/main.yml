@@ -42,7 +42,3 @@
     namespace: "{{openldap_namespace}}"
   become_user: "{{admin_user}}"
   register: L_OPENLDAP_SERVICE_INFO
-
-- name: Export variables
-  set_fact:
-    OPENLDAP_SERVICE_INFO: "{{L_OPENLDAP_SERVICE_INFO}}"

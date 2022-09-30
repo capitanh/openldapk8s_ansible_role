@@ -2,7 +2,6 @@
 global:
   ldapDomain: "{{ldap_domain}}"
   adminPassword: "{{admin_password}}"
-  configPassword: "{{config_password}}"
 replicaCount: {{openldap_replicas}}
 
 service:
@@ -12,7 +11,6 @@ service:
 replication:
   enabled: false
 
-## Persist data to a persistent volume
 persistence:
   size: 50Mi
 
