@@ -2,7 +2,7 @@
 global:
   ldapDomain: "{{ldap_domain}}"
   adminPassword: "{{admin_password}}"
-replicaCount: {{openldap_replicas}}
+#replicaCount: {{openldap_replicas}}
 
 service:
   type: NodePort
