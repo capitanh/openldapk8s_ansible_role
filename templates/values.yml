@@ -1,7 +1,8 @@
 # Custom config values, see https://github.com/jp-gouin/helm-openldap/blob/master/values.yaml for reference
 global:
-  ldapDomain: "{{ldap_domain}}"
-  adminPassword: "{{admin_password}}"
+  ldapDomain: {{ldap_domain}}
+  adminPassword: {{admin_password}}
+replicaCount: {{openldap_replicas}}
 
 service:
   type: NodePort
