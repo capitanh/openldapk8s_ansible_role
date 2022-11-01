@@ -11,14 +11,12 @@ Role Variables
 --------------
 This role requires the following variables to be defined elsewhere in the playbook that uses it. These are the default values:
 ```yaml
+openldap_domain:            example.com
 openldap_app_name:          openldap                      # helm chart release name
 openldap_namespace:         openldap                      # k8s namespace
-ldap_organisation:          My org                        # ldap organisation field
-ldapDomain:                 example.com                   # ldap root domain
-adminPassword:              secret                        # admin user password
-configPassword:             secret                        # config password (defined in openldap/group_vars/all/vault.yml)
-ldap_nodeport:              30001                         # k8s Nodeport to access ldap server from outside cluster
-openldap_replicas:          1                             # number of replicas
+openldap_admin_password:    secret                        # admin user password
+openldap_replicas:          1                             # k8s replicas count
+openldap_nodeport:          30001                         # k8s Nodeport to access ldap server from outside cluster
 ```
 
 Dependencies
