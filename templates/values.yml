@@ -2,7 +2,6 @@
 global:
   ldapDomain: {{openldap_domain}}
   adminPassword: {{openldap_admin_password}}
-  configPassword: {{openldap_admin_password}}
 replicaCount: {{openldap_replicas}}
 
 service:
