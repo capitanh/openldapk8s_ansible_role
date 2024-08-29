@@ -7,11 +7,7 @@
   vars:
     packages:
     - python3-ldap
-
-- name: Install pip packages
-  pip:
-    name:
-      - kubernetes
+    - python3-kubernetes
 
 - name: Transfer openldap config values file
   template:
